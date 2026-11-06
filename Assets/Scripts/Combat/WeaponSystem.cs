@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
-    public float reloadTime = 3.5f;
+    public float reloadTime = 2.1f; // Doldurma hızı %40 artırıldı
+    public AudioSource reloadAudio;
 
     public void Reload()
     {
-        Debug.Log("Reloading weapon... Time: " + reloadTime);
+        if (reloadAudio != null) reloadAudio.Play();
+        Debug.Log("Reloading weapon quickly! Time: " + reloadTime);
     }
 }
